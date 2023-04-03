@@ -1,7 +1,12 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
+
 function SongList(props) {
-    const { songs } = props;
+
+    // const { songs } = props;
+
+    const songs = useSelector((state) => state.songs)
+
     return (
         <div>
             {songs.map((song) => (
@@ -11,8 +16,10 @@ function SongList(props) {
     );
 }
 
-const mapStateToProps = (state) => {
-    return { songs: state.songs };
-};
+// const mapStateToProps = (state) => {
+//     return { songs: state.songs };
+// };
+
+export default SongList;
 
 // Add code here
